@@ -1,4 +1,4 @@
-import java.uti
+import java.ut
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> lastIndex = new HashMap<>();
