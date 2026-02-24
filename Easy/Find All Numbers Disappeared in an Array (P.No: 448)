@@ -1,0 +1,31 @@
+class Solution(object):
+    def findDisappearedNumbers(self, nums):
+        seen=set()
+        ret=[]
+        for i in nums:
+            seen.add(i)
+        for i in range(1,len(nums)+1):
+            if i not in seen:
+                ret.append(i)
+        return ret
+
+--------------------------------------------------
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+         Set<Integer> seen = new HashSet<>();
+        List<Integer> ret = new ArrayList<>();
+        
+        for (int i : nums) {
+            seen.add(i);
+        }
+        
+        for (int i = 1; i <= nums.length; i++) {
+            if (!seen.contains(i)) {
+                ret.add(i);
+            }
+        }
+        
+        return ret;
+    
+    }
+}
