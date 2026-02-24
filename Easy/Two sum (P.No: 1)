@@ -1,0 +1,61 @@
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        
+        
+        return new int[] {};
+    }
+}
+
+
+------------------------------------------
+
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        hashmap = {}
+        for i, v in enumerate(nums):
+            diff = target - v
+            if diff in hashmap:
+                return [hashmap[diff], i]
+            hashmap[v] = i
+
+-----------------------------------------------
+class Solution(object):
+    def twoSum(self, nums, target):
+        temp=[]
+        for i in range(0,len(nums)):
+            for j in range(i+1,len(nums)):
+                if (nums[i]+nums[j]==target):
+                    temp=[i,j]
+                    return temp
+        return temp
+
+
+--------------------------------------------------
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] temp={};
+        for(int i=0;i<nums.length;i++)
+        {
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[i]+nums[j]==target)
+                {
+                  int[]  temp1={i,j};
+                    return temp1;
+                }
+            }
+        }
+        return temp;
+    }
+}
